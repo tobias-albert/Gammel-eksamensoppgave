@@ -1,16 +1,16 @@
 # Gammel-eksamensoppgave
-Gammel eksamensoppgave til IS-207 (Nå IS-211), fra 2011
-
+Gammel eksamensoppgave til IS-207 (Nå IS-211), fra 2011  
+Oppgaven ligger nedenfor  
 
 # E K S A M E N
 
 ```
-Emnekode: IS-
+Emnekode: IS-207
 Emnenavn: Algoritmer og datastrukturer
 ```
 ```
 Dato: 23. mai 2011
-Varighet: 0900-
+Varighet: 0900-1300
 ```
 ```
 Antall sider inkl. forside: 4
