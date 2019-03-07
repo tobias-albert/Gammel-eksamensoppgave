@@ -26,7 +26,7 @@ Merknader:
 ```
 ___________________________________________________________________________
 
-![image of the graph](graph.png)
+![image of the graph](graph.PNG)
 
 ## Innledning
 
