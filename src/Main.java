@@ -1,13 +1,14 @@
 import java.util.Random;
 
 public class Main {
-    public static String[] navn = {"Per", "Pål", "Narren", "Kongen", "Prinsessa", "Espen"};
-    public static Random r = new Random(42);
-    public static KontaktNett k = new KontaktNett();
-    public static int grense;
+    private static String[] navn = {"Per", "Pål", "Narren", "Kongen", "Prinsessa", "Espen"};
+    private static Random r = new Random(42);
+    private static KontaktNett k = new KontaktNett();
+    private static int grense;
 
     public static void main(String[] args) {
-        genererSamtaler(k, 10);
+        //lager noen tilfeldige samtaler
+        genererSamtaler(10);
 
         grense = 10;
 
@@ -23,13 +24,7 @@ public class Main {
             k.registrerSamtale(navn[3], navn[4]);
         }
 
-
-        for (Samtale s: k.samtaler.keySet()) {
-            if (s.toString().contains("Narren"))
-            System.out.println(s.toString() + " - " + k.samtaler.get(s));
-        }
-
-        System.out.println("Samtaler: " + k.samtaler.size());
+        System.out.println("\nSamtaler: " + k.samtaler.size());
 
         System.out.println("\nDIREKTE KONTAKTER");
         for (String person: k.personer) {
@@ -42,16 +37,21 @@ public class Main {
             System.out.println("\n" + person + ":");
             System.out.println(k.finnAlleKontakter(person, grense));
         }
-
-
-
     }
 
+    /**
+     * Ikke i bruk for øyeblikket
+     * @param s samtalen som data blir printet for
+     */
     public static void printTestData(Samtale s) {
         System.out.println(s.toString() + ": over " + grense + " - " + k.harTettKontakt(s.getSender(), s.getMottaker(), grense));
     }
 
-    public static void genererSamtaler(KontaktNett k, int antall) {
+    /**
+     * Genererer et antall samtaler med 'genererSamtale'-metoden
+     * @param antall hvor mange samtaler som blir laget
+     */
+    public static void genererSamtaler(int antall) {
         for (int i = 0; i < antall; i++) {
             Samtale s = genererSamtale();
             String sender = s.getSender();
@@ -61,6 +61,10 @@ public class Main {
     }
 
 
+    /**
+     * Genererer en samtale mellom to tilfeldige personer, som ikke er samme person
+     * @return genererte samtalen
+     */
     public static Samtale genererSamtale() {
         String sender = genererNavn(null);
         String mottaker = genererNavn(sender);

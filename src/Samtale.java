@@ -20,19 +20,19 @@ public class Samtale {
         return sender + " -> " + mottaker;
     }
 
+
     @Override
+    //blir brukt i bl.a. contains funksjoner i hashmap
     public boolean equals(Object o) {
         if (o.getClass() != this.getClass()) {
             return false;
         }
 
-        if (o.toString().equals(this.toString())) {
-            return true;
-        }
-        return false;
+        return o.toString().equals(this.toString());
     }
 
     @Override
+    //blir brukt i bl.a. contains funksjoner i hashmap
     public int hashCode() {
         int a = this.sender.hashCode() / 199933;
         int b = Math.abs(this.mottaker.hashCode() / 199933);

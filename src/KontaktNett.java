@@ -4,6 +4,7 @@ import java.util.List;
 
 public class KontaktNett {
     // Oppgave 1a - feltdeklarasjonerr
+    //public fordi det ble slitsomt med getters
     public HashMap<Samtale, Integer> samtaler;
     public ArrayList<String> personer;
 
